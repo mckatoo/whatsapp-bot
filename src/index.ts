@@ -13,7 +13,9 @@ async function main() {
       `${json.to}${participant} menssagem(s) aceita(s) ${json.ids} as ${json.type}`
     );
   });
+
   messages.verifyMessages(client);
+
   client.setOnUnexpectedDisconnect((err) =>
     console.log("disconnected unexpectedly: " + err)
   );

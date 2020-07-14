@@ -1,12 +1,11 @@
-import WhatsAppWebMessages from "@adiwajshing/baileys/lib/WAClient/Messages";
-import { MessageType } from "@adiwajshing/baileys";
+import { MessageType, WAClient } from "@adiwajshing/baileys";
 
 export function Principal(
   remoteJid: string,
-  msg: WhatsAppWebMessages,
+  client: WAClient,
   type: MessageType
 ): void {
-  msg.sendMessage(
+  client.sendMessage(
     remoteJid,
     `
               ----- MENU PRINCIPAL -----
@@ -22,46 +21,65 @@ export function Principal(
 
 export function Pizzas(
   remoteJid: string,
-  msg: WhatsAppWebMessages,
+  client: WAClient,
   type: MessageType
 ): void {
-  msg.sendMessage(
+  client.sendMessage(
     remoteJid,
     `
               ----- PIZZAS -----
-              1 ou 2 Sabores?
+              Calabreza
+              Bauru
+              Quatro queijos
+              Portuguesa
+              À moda da casa
               `,
     type
   );
 }
 export function Lanches(
   remoteJid: string,
-  msg: WhatsAppWebMessages,
+  client: WAClient,
   type: MessageType
 ): void {
-  msg.sendMessage(
+  client.sendMessage(
     remoteJid,
     `
-              ----- PIZZAS -----
-              Digite de 1 a 4 para escolher as opções:
-              1 - X-Salada
-              2 - X-Salada Bacon
-              3 - X-Burger
-              4 - Voltar ao menu principal
+              ----- LANCHES -----
+              X-Salada
+              X-Salada Bacon
+              X-Burger
+              "menu" para voltar ao menu principal
+              `,
+    type
+  );
+}
+export function Porcoes(
+  remoteJid: string,
+  client: WAClient,
+  type: MessageType
+): void {
+  client.sendMessage(
+    remoteJid,
+    `
+              ----- PORÇÕES -----
+              Salaminho
+              Queijos
+              Palmito
+              "menu" para voltar ao menu principal
               `,
     type
   );
 }
 export function NotaAtendimento(
   remoteJid: string,
-  msg: WhatsAppWebMessages,
+  client: WAClient,
   type: MessageType
 ): void {
-  msg.sendMessage(
+  client.sendMessage(
     remoteJid,
     `
-              ----- PIZZAS -----
-              Digite de 1 a 4 para escolher as opções:
+              ----- NOTA PARA O ATENDIMENTO -----
               1 - Ótimo
               2 - Bom
               3 - Ruim

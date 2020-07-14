@@ -1,15 +1,9 @@
-import fs from "fs";
 import {
   getNotificationType,
   MessageType,
-  decodeMediaMessage,
-  Presence,
-  MessageOptions,
-  Mimetype,
-  WALocationMessage,
   WAClient,
 } from "@adiwajshing/baileys";
-import { Principal } from "./menus";
+import { Principal, Pizzas, Lanches, Porcoes } from "./menus";
 
 class Messages {
   async verifyMessages(client: WAClient) {
@@ -33,9 +27,26 @@ class Messages {
 
       if (messageType === MessageType.text && sender != null) {
         const text = m.message?.conversation;
-        // MENU ENTRA AQUI
-        // Principal(sender, MessageType.text);
         console.log(sender + " Enviou: " + text);
+        if (text != "") {
+            Principal(sender, client, MessageType.text);
+        }
+        switch (text) {
+          case "menu":
+            Principal(sender, client, MessageType.text);
+            break;
+          case "lanches":
+            Lanches(sender, client, MessageType.text);
+            break;
+          case "pizza":
+            Pizzas(sender, client, MessageType.text);
+            break;
+          case "porcoes":
+            Porcoes(sender, client, MessageType.text);
+            break;
+          default:
+            break;
+        }
       }
     });
   }
