@@ -2,6 +2,11 @@ auth_info.json
 
 dist
 
+# Media files
+*.mp3
+*.mp4
+*.ogg
+
 # Logs
 logs
 *.log
