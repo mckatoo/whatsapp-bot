@@ -1,11 +1,11 @@
-import { MessageType, WAClient } from "@adiwajshing/baileys";
+import { MessageType, WAClient, WASendMessageResponse } from "@adiwajshing/baileys";
 
-export function Principal(
+export function send (
   remoteJid: string,
   client: WAClient,
   type: MessageType
-): void {
-  client.sendMessage(
+): Promise<WASendMessageResponse> {
+  return client.sendMessage(
     remoteJid,
     `
               ----- MENU PRINCIPAL -----
@@ -19,72 +19,3 @@ export function Principal(
   );
 }
 
-export function Pizzas(
-  remoteJid: string,
-  client: WAClient,
-  type: MessageType
-): void {
-  client.sendMessage(
-    remoteJid,
-    `
-              ----- PIZZAS -----
-              Calabreza
-              Bauru
-              Quatro queijos
-              Portuguesa
-              À moda da casa
-              `,
-    type
-  );
-}
-export function Lanches(
-  remoteJid: string,
-  client: WAClient,
-  type: MessageType
-): void {
-  client.sendMessage(
-    remoteJid,
-    `
-              ----- LANCHES -----
-              X-Salada
-              X-Salada Bacon
-              X-Burger
-              "menu" para voltar ao menu principal
-              `,
-    type
-  );
-}
-export function Porcoes(
-  remoteJid: string,
-  client: WAClient,
-  type: MessageType
-): void {
-  client.sendMessage(
-    remoteJid,
-    `
-              ----- PORÇÕES -----
-              Salaminho
-              Queijos
-              Palmito
-              "menu" para voltar ao menu principal
-              `,
-    type
-  );
-}
-export function NotaAtendimento(
-  remoteJid: string,
-  client: WAClient,
-  type: MessageType
-): void {
-  client.sendMessage(
-    remoteJid,
-    `
-              ----- NOTA PARA O ATENDIMENTO -----
-              1 - Ótimo
-              2 - Bom
-              3 - Ruim
-              4 - Péssimo
-              `,
-    type
-  );
-}
