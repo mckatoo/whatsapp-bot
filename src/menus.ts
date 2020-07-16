@@ -1,19 +1,19 @@
-import { MessageType, WAClient, WASendMessageResponse } from "@adiwajshing/baileys";
+import { MessageType, WAClient } from "@adiwajshing/baileys";
+import axios from 'axios'
 
-export function send (
+export async function sendMenu (
+  menuTitle: string,
   remoteJid: string,
   client: WAClient,
   type: MessageType
-): Promise<WASendMessageResponse> {
-  return client.sendMessage(
+): Promise<void> {
+  const opcoes = await axios.get('http://localhost:1337/options-menus')
+  client.sendMessage(
     remoteJid,
     `
-              ----- MENU PRINCIPAL -----
+              ----- MENU ${menuTitle.toUpperCase()} -----
               Escolha uma das opções:
-              1 - Pizzas
-              2 - Lanches
-              3 - Porções
-              4 - Fazer uma sugestão, reclamação ou elogio
+              ${opcoes}
               `,
     type
   );

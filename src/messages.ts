@@ -4,7 +4,7 @@ import {
   WAClient,
   decodeMediaMessage,
 } from '@adiwajshing/baileys'
-import { send } from './menus'
+import { sendMenu } from './menus'
 import fs from 'fs'
 
 class Messages {
@@ -33,7 +33,7 @@ class Messages {
         const text = m.message?.conversation
         console.log(sender + ' Enviou: ' + text)
         if (text != '' && menu === 'principal') {
-          send(sender, client, MessageType.text)
+          sendMenu('principal', sender, client, MessageType.text)
         }
       } else if (
         messageType === MessageType.audio &&

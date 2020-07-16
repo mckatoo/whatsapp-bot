@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@adiwajshing/baileys": "^2.1.0",
-    "@google-cloud/speech": "^4.1.1"
+    "@google-cloud/speech": "^4.1.1",
+    "axios": "^0.19.2"
   }
 }
