@@ -30,10 +30,10 @@ class Messages {
       }
 
       if (messageType === MessageType.text && sender != null) {
-        const text = m.message?.conversation
+        const text = m.message?.conversation?.normalize("NFD").replace(/[^a-zA-Zs]/g, "")
         console.log(sender + ' Enviou: ' + text)
-        if (text != '' && menu === 'principal') {
-          sendMenu('principal', sender, client, MessageType.text)
+        if (text != '' && text != undefined) {
+          sendMenu(text, sender, client, MessageType.text)
         }
       } else if (
         messageType === MessageType.audio &&
