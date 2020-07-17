@@ -30,7 +30,7 @@ class Messages {
       }
 
       if (messageType === MessageType.text && sender != null) {
-        const text = m.message?.conversation?.normalize("NFD").replace(/[^a-zA-Zs]/g, "")
+        const text = m.message?.conversation
         console.log(sender + ' Enviou: ' + text)
         if (text != '' && text != undefined) {
           sendMenu(text, sender, client, MessageType.text)
