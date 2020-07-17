@@ -27,7 +27,9 @@ export async function sendMenu(
   for (const opc of opcoes.data) {
     opc.option === undefined
       ? (menu = `${menu}*${opc.id}* - ${opc.title}\n`)
-      : (menu = `${menu}*${opc.id}* - ${opc.option}\n`)
+      : (menu = `${menu}*${opc.id}* - ${opc.option} *R$${parseFloat(
+          opc.price
+        ).toFixed(2)}*\n`)
   }
   client.sendMessage(remoteJid, menu, type)
 }
