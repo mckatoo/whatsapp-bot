@@ -1,5 +1,6 @@
 import { MessageType, WAClient } from '@adiwajshing/baileys'
 import axios from 'axios'
+import align from 'align-text-line'
 
 export async function sendMenu(
   search: string,
@@ -23,13 +24,26 @@ export async function sendMenu(
     ? (title = 'PRINCIPAL')
     : (title = opcoes.data[0].menu.title)
 
-  let menu = `----- MENU ${title.toUpperCase()} -----\nEscolha uma das opções:\n`
+  const lineSize = 42
+  let menu = `${align.centralized(
+    ` MENU ${title.toUpperCase()} `,
+    '-',
+    lineSize
+  )}\n${align.leftAligned('Escolha uma das opções:', ' ', lineSize)}\n`
   for (const opc of opcoes.data) {
     opc.option === undefined
-      ? (menu = `${menu}*${opc.id}* - ${opc.title}\n`)
-      : (menu = `${menu}*${opc.id}* - ${opc.option} *R$${parseFloat(
-          opc.price
-        ).toFixed(2)}*\n`)
+      ? (menu = `${menu}${align.leftRightAligned(
+          `*${opc.id}* `,
+          ` ${opc.title}`,
+          '-',
+          lineSize
+        )}\n`)
+      : (menu = `${menu}${align.leftRightAligned(
+          `*${opc.id}* - ${opc.option} `,
+          ` R$${parseFloat(opc.price).toFixed(2)}\n`,
+          '-',
+          lineSize
+        )}\n`)
   }
   client.sendMessage(remoteJid, menu, type)
 }

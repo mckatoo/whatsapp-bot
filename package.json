@@ -1,6 +1,6 @@
 {
   "name": "whatsapp-bot",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -45,6 +45,7 @@
   "dependencies": {
     "@adiwajshing/baileys": "^2.1.0",
     "@google-cloud/speech": "^4.1.1",
+    "align-text-line": "^0.0.4",
     "axios": "^0.19.2"
   },
   "config": {
