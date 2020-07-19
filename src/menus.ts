@@ -40,7 +40,7 @@ export async function sendMenu(
         )}\n`)
       : (menu = `${menu}${align.leftRightAligned(
           `*${opc.id}* - ${opc.option} `,
-          ` R$${parseFloat(opc.price).toFixed(2)}\n`,
+          ` R$${parseFloat(opc.price).toFixed(2)}`,
           '-',
           lineSize
         )}\n`)
