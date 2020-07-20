@@ -24,7 +24,7 @@ export async function sendMenu(
     ? (title = 'PRINCIPAL')
     : (title = opcoes.data[0].menu.title)
 
-  const lineSize = 42
+  const lineSize = 27
   let menu = `${align.centralized(
     ` MENU ${title.toUpperCase()} `,
     '-',
@@ -33,18 +33,19 @@ export async function sendMenu(
   for (const opc of opcoes.data) {
     opc.option === undefined
       ? (menu = `${menu}${align.leftRightAligned(
-          `*${opc.id}* `,
-          ` ${opc.title}`,
+          `${opc.id}`,
+          `${opc.title}`,
           '-',
           lineSize
         )}\n`)
       : (menu = `${menu}${align.leftRightAligned(
-          `*${opc.id}* - ${opc.option} `,
-          ` R$${parseFloat(opc.price).toFixed(2)}`,
+          `${opc.id}-${opc.option}`,
+          `R$${parseFloat(opc.price).toFixed(2)}`,
           '-',
           lineSize
         )}\n`)
   }
+  menu = `\`\`\`${menu}\`\`\``
   client.sendMessage(remoteJid, menu, type)
 }
 
