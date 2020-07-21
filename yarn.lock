@@ -1086,10 +1086,10 @@ ajv@^6.10.0, ajv@^6.10.2, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-align-text-line@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/align-text-line/-/align-text-line-0.0.4.tgz#30821c7c9efc874c92cbee14cb67b55be1abd407"
-  integrity sha512-heBG9TdRIglcLgoF+vOVMVJrAQkpfSOMvegnmzCnSECSpIZDPQ4KSkdsfo77vz6BMGad/0EhmPMZ783BMn7wig==
+align-text-line@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/align-text-line/-/align-text-line-0.0.5.tgz#b1d1c471e532e2a4fc801ca4710651dd5a7de496"
+  integrity sha512-4cCtgQZgHyUkpADQ6Rw5KU8g4sYNFbIwSXg85IKHjNV6Ry7ZgODmTw9DzA69rCBSMBCcKjuWB7fhN1hM1B0X6A==
 
 ansi-align@^3.0.0:
   version "3.0.0"

@@ -1,30 +1,23 @@
-import * as fs from "fs";
-import {
-  MessageLogLevel,
-  WAClient,
-} from "@adiwajshing/baileys";
+import * as fs from 'fs'
+import { MessageLogLevel, WAClient } from '@adiwajshing/baileys'
 
-class Connect {
-  async connect() {
-    const client = new WAClient();
-    client.autoReconnect = true;
-    client.logLevel = MessageLogLevel.none;
+export default class Connect {
+public static async connect() {
+    const client = new WAClient()
+    client.autoReconnect = true
+    client.logLevel = MessageLogLevel.none
     const [user, chats, contacts, unread] = await client.connect(
-      "./auth_info.json",
+      './auth_info.json',
       20 * 1000
-    );
+    )
 
-    // console.log("oh hello " + user.name + " (" + user.id + ")");
-console.log(`Você tem ${unread.length}  mensagens não lidas.`);
-console.log(
-     `Você tem ${ chats.length } chats e ${contacts.length} contatos`
-    );
+    console.log('Olá ' + user.name + ' (' + user.id + ')')
+    console.log(`Você tem ${unread.length}  mensagens não lidas.`)
+    console.log(`Você tem ${chats.length} chats e ${contacts.length} contatos`)
 
-    const authInfo = client.base64EncodedAuthInfo();
-    fs.writeFileSync("./auth_info.json", JSON.stringify(authInfo, null, "\t"));
+    const authInfo = client.base64EncodedAuthInfo()
+    fs.writeFileSync('./auth_info.json', JSON.stringify(authInfo, null, '\t'))
 
-    return { client };
+    return { client }
   }
 }
-
-export default new Connect();
