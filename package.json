@@ -42,7 +42,7 @@
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "ts-jest": "^26.1.3",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "@adiwajshing/baileys": "^2.3.1",
