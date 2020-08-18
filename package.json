@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "lint": "eslint src --max-warnings=0",
     "test": "jest",
     "build": "tsc",
     "start": "node dist/"
@@ -44,7 +45,7 @@
     "typescript": "^3.9.6"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^2.1.0",
+    "@adiwajshing/baileys": "^2.3.1",
     "align-text-line": "^0.0.5",
     "axios": "^0.19.2"
   },

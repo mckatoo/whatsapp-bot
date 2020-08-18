@@ -9,7 +9,7 @@ import fs from 'fs'
 
 class Messages {
   async verifyMessages(client: WAClient) {
-    const menu = 'principal'
+    // const menu = 'principal'
     client.setOnUnreadMessage(true, async m => {
       const [notificationType, messageType] = getNotificationType(m)
       console.log('Recebeu notificação do tipo: ' + notificationType)
