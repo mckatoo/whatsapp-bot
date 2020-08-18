@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@adiwajshing/baileys": "^2.3.1",
-    "align-text-line": "^0.0.5",
+    "align-text-line": "^0.0.6",
     "axios": "^0.19.2"
   },
   "config": {
