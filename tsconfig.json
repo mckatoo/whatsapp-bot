@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2017",                          
-    "module": "commonjs",                     
-    "lib": ["es6"],                             
+    "target": "es2017",
+    "lib": ["es6"],
+    "baseUrl": "./src",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "rootDir": "./src",                       
-    "removeComments": true,                
-    "baseUrl": ".",
+    "rootDir": "./src",
+    "removeComments": true,
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "module": "CommonJS",
+    "moduleResolution": "node"
   },
-  "include": ["src/**/*"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src --max-warnings=0",
     "test": "jest",
-    "build": "tsc",
+    "build": "tsc --declaration",
     "start": "node dist/"
   },
   "husky": {
@@ -49,6 +49,7 @@
     "align-text-line": "^0.0.6",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
+    "graphql": "^15.3.0",
     "graphql-request": "^3.0.0"
   },
   "config": {
