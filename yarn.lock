@@ -1318,10 +1318,10 @@ ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.4, ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-align-text-line@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/align-text-line/-/align-text-line-0.0.6.tgz#197aa3f25da10d31642812df02c2105903a9d340"
-  integrity sha512-5DtwnSBUQwWqbJ6/HJ11j8HRqlFC6XzEU6XEOUZFoqrBDT8g4nCAP/t0OYHGolWXvEMj4IjNwU8S3HgxlMFSeg==
+align-text-line@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/align-text-line/-/align-text-line-0.0.7.tgz#25abb5cffa081351f915e79b6d783cbc58000b90"
+  integrity sha512-uBtTeWDAMQyA/iJ6JK7dRg4yXHS57SirdPQUHnLBHbuCogZngWHK9M6KFLsxlUxCISkba5fqSZo78Tghs1rhQQ==
 
 ansi-align@^3.0.0:
   version "3.0.0"
