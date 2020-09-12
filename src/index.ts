@@ -1,24 +1,16 @@
-import connect from './connect'
-import messages from './messages'
+import { Connect } from 'connect'
+import { Messages } from 'messages'
 
 async function main() {
-  const client = await connect.connect()
+  const { connect } = new Connect()
+  const client = await connect()
+  const messages = new Messages(client)
 
-  client.setOnPresenceUpdate(json =>
-    console.log(json.id + ' presence is ' + json.type)
-  )
-  client.setOnMessageStatusChange(json => {
-    const participant = json.participant ? ' (' + json.participant + ')' : ''
-    console.log(
-      `${json.to}${participant} menssagem(s) aceita(s) ${json.ids} as ${json.type}`
-    )
+  messages.verifyMessages()
+
+  client.on('close', json => {
+    console.log(json)
   })
-
-  messages.verifyMessages(client)
-
-  client.setOnUnexpectedDisconnect(err =>
-    console.log('disconnected unexpectedly: ' + err)
-  )
 }
 
 main().catch(err => console.log(`encountered error: ${err}`))
