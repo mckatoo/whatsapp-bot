@@ -1,22 +1,27 @@
 import * as fs from 'fs'
-import { MessageLogLevel, WAClient } from '@adiwajshing/baileys'
+import path from 'path'
+import {
+  MessageLogLevel,
+  ReconnectMode,
+  WAConnection,
+} from '@adiwajshing/baileys'
 
-export default class Connect {
-  public static async connect(): Promise<WAClient> {
-    const client = new WAClient()
-    client.autoReconnect = true
-    client.logLevel = MessageLogLevel.none
-    const [user, chats, contacts] = await client.connect(
-      './auth_info.json',
-      20 * 1000
-    )
+export class Connect {
+  async connect(): Promise<WAConnection> {
+    const conn = new WAConnection()
+    const fileAuthString = path.join(__dirname, 'auth_info.json')
+    if (fs.existsSync(fileAuthString)) {
+      conn.loadAuthInfo(fileAuthString)
+    }
+    await conn.connect()
+    conn.autoReconnect = ReconnectMode.onConnectionLost
+    conn.logLevel = MessageLogLevel.none
 
-    console.log('Olá ' + user.name + ' (' + user.id + ')')
-    console.log(`Você tem ${chats.all().length} chats e ${contacts.length} contatos`)
+    console.log('Oh hello ' + conn.user.name + ' (' + conn.user.jid + ')')
+    console.log('you have ' + conn.chats.all().length + ' chats')
+    const authInfo = conn.base64EncodedAuthInfo()
+    fs.writeFileSync(fileAuthString, JSON.stringify(authInfo, null, '\t'))
 
-    const authInfo = client.base64EncodedAuthInfo()
-    fs.writeFileSync('./auth_info.json', JSON.stringify(authInfo, null, '\t'))
-
-    return client
+    return conn
   }
 }

@@ -6,6 +6,6 @@ import { GraphQLClient } from 'graphql-request'
 // const client = new GraphQLClient(
 //   process.env.GRAPHQL_HOST || 'http://localhost:1337/graphql'
 // )
-const client = new GraphQLClient('http://localhost:1337/graphql')
+const gqClient = new GraphQLClient('http://localhost:1337/graphql')
 
-export default client
+export { gqClient }
