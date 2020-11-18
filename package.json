@@ -22,7 +22,6 @@
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
-      "yarn typecheck",
       "cross-env CI=true npx jest --bail --findRelatedTests"
     ]
   },
