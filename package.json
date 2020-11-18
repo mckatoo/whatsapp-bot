@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src --max-warnings=0",
-    "test": "jest --bail --findRelatedTests",
+    "test": "jest --bail --findRelatedTests ./src/index.ts",
     "build": "tsc --declaration",
     "build:watch": "tsc --declaration --watch",
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules -r tsconfig-paths/register src/index.ts",
