@@ -9,7 +9,8 @@
     "build": "tsc --declaration",
     "build:watch": "tsc --declaration --watch",
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules -r tsconfig-paths/register src/index.ts",
-    "start": "node dist/"
+    "start": "node dist/",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "husky": {
     "hooks": {
@@ -21,6 +22,7 @@
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
+      "yarn typecheck",
       "cross-env CI=true npx jest --bail --findRelatedTests"
     ]
   },
