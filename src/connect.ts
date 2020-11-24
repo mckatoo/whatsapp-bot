@@ -1,7 +1,6 @@
 import * as fs from 'fs'
 import path from 'path'
 import {
-  MessageLogLevel,
   ReconnectMode,
   WAConnection,
 } from '@adiwajshing/baileys'
@@ -15,7 +14,6 @@ export class Connect {
     }
     await conn.connect()
     conn.autoReconnect = ReconnectMode.onConnectionLost
-    conn.logLevel = MessageLogLevel.none
 
     console.log('Oh hello ' + conn.user.name + ' (' + conn.user.jid + ')')
     console.log('you have ' + conn.chats.all().length + ' chats')
