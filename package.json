@@ -30,7 +30,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/preset-typescript": "^7.12.7",
-    "@commitlint/cli": "^11.0.0",
+    "@commitlint/cli": "^12.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@types/jest": "^26.0.15",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
