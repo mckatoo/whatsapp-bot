@@ -49,7 +49,7 @@
     "typescript": "^4.3.2"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.0",
+    "@adiwajshing/baileys": "^3.5.1",
     "align-text-line": "^0.0.7",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
