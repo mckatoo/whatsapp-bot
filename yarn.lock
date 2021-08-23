@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@adiwajshing/baileys@^3.5.1":
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/@adiwajshing/baileys/-/baileys-3.5.1.tgz#fea9ab1244969a907b0f125b76eb201526c90df2"
-  integrity sha512-Gnqzhh4xFRu9zLTqHeJSztPD80RlKwfqQIbLfc8wjk1A+PgneGgYYPuuiKnQa0Tot8rUvPqX7yTbtxu9Tq5iQQ==
+"@adiwajshing/baileys@^3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@adiwajshing/baileys/-/baileys-3.5.2.tgz#cf7d14bd9fd3c501896e7a7937192bff10721f1a"
+  integrity sha512-tC9xGvVueql57pnEj6OwxTU2ENOfXMG9w4tVkbCh5w3BseyIjH+xqM0fd+hcOyYFdwi43bdMIlqYa39D50xGDQ==
   dependencies:
     "@adiwajshing/keyed-db" "^0.2.2"
     curve25519-js "^0.0.4"
