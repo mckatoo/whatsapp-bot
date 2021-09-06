@@ -51,7 +51,7 @@
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.2",
     "align-text-line": "^0.0.7",
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "dotenv": "^10.0.0",
     "graphql": "^15.5.1",
     "graphql-request": "^3.5.0"
